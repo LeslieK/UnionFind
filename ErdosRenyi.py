@@ -110,13 +110,13 @@ def compare_algos(N, algo1, algo2):
     return results
 
 
-def main(N, algo, algo2=None):
+def main(N=64, algo="WQUH", algo2=None):
     """
     1 arg: returns number of connections to connect N sites
     2 arg: returns ratio of running times for the 2 algos
     """
     if algo2 is None:
-        num_connections, avg_connections = count(int(N), algo)
+        num_connections, avg_connections = count(N, algo)
         return num_connections, avg_connections
     else:
         result_dict = compare_algos(N, algo, algo2)
@@ -125,7 +125,7 @@ def main(N, algo, algo2=None):
 import math
 
 
-def model(N, algo):
+def model(N=64, algo="WQUH"):
     """
     returns:
     number of random connections needed to connect N sites
